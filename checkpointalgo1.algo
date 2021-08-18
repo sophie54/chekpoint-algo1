@@ -1,0 +1,26 @@
+ALGORITHM sentence 
+VAR
+    c:CHAR;
+    compt_voyelle:INTEGER:=0;
+    compt_espace:INTEGER:=0;
+    compt_caracter:INTEGER:=0;
+    str:STRING[];
+BEGIN
+    REPEAT
+        write('enter a caracter')
+        read(c)
+        IF (c in [a,e,i,o,u,y,A,E,I,O,U,Y]) THEN
+            compt_voyelle:= compt_voyelle+1;
+        END_IF
+        IF (c:=" ") THEN
+            compt_espace:= compt_espace+1;
+        ELSE
+            compt_caracter:= compt_caracter+1;
+        END_IF
+        concat(str,c);
+    UNTIL (c=".")
+    write('the sentence is :',str);
+    write('the number of vowels in sentence is :', compt_voyelle);
+    write('the number of caracter in sentence is :',compt_caracter);
+    write('the number of words in sentence is :',compt_espace+1);  
+END
